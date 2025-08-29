@@ -1,0 +1,229 @@
+.footer-wrap {
+  background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+  color: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* --- Top Strip --- */
+.footer-strip {
+  display: flex;
+  justify-content: space-between; /* links left, icons right */
+  align-items: center;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #bdbdbd;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-strip a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-strip a:hover {
+  color: #ffcf4a;
+}
+.footer-strip .sep {
+  opacity: 0.4;
+}
+
+/* --- Social Icons --- */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icons img {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover brand effects */
+.social-icons a[href*="wa.me"] img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(37, 211, 102, 0.7); /* WhatsApp glow */
+}
+
+.social-icons a[href*="t.me"] img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(0, 136, 204, 0.7); /* Telegram glow */
+}
+
+.social-icons a[href*="instagram.com"] img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(225, 48, 108, 0.7); /* Instagram glow */
+}
+
+/* Responsive: stack icons below links on small devices */
+@media (max-width: 600px) {
+  .footer-strip {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
+
+/* --- Divider --- */
+.divider {
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  margin: 8px 0;
+}
+
+/* --- Trust & Payments --- */
+.trust-payments {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 24px 18px;
+}
+@media (min-width: 900px) {
+  .trust-payments {
+    grid-template-columns: 320px 1fr;
+    align-items: center;
+  }
+}
+
+.trust-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.shield {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  background: rgba(40, 130, 60, 0.15);
+  border: 1px solid rgba(88, 228, 122, 0.3);
+  color: #58e47a;
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(88, 228, 122, 0.15);
+}
+.trust-text .safe {
+  font-weight: 700;
+  color: #58e47a;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+.trust-text .sub {
+  color: #a9a9a9;
+  font-size: 13px;
+}
+
+/* --- Payments Row --- */
+.payments-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+}
+.payment-card {
+  height: 70px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+}
+.payment-card img {
+  max-height: 36px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.05) contrast(1.1);
+}
+.payment-card:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: #ffcf4a;
+  box-shadow: 0 0 14px rgba(255, 207, 74, 0.4);
+}
+
+/* --- Support Row --- */
+.support-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin: 0 18px;
+  text-align: center;
+}
+@media (min-width: 700px) {
+  .support-row {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+.support-title {
+  color: #e5e5e5;
+  font-weight: 600;
+  font-size: 15px;
+}
+.support-phones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.support-btn {
+  background: #ffcf4a;
+  color: #111;
+  font-weight: 600;
+  border: none;
+  padding: 9px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.support-btn:hover {
+  background: #ffd75c;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 207, 74, 0.45);
+}
+.support-gap {
+  display: none;
+}
+@media (min-width: 700px) {
+  .support-gap {
+    display: inline;
+    color: #aaa;
+  }
+}
+
+/* --- Copy Row --- */
+.copy-row {
+  text-align: center;
+  padding: 18px 12px 28px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.copy-row span {
+  color: #ffcf4a;
+  font-weight: 700;
+}

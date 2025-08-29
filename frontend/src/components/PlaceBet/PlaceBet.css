@@ -1,0 +1,139 @@
+.placebet {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* Dark overlay to make text readable */
+.placebet-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px 20px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Golden glowing background effect */
+.placebet::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,180,0,0.15), transparent 70%);
+  animation: pulseGlow 6s infinite;
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 0.3; }
+}
+
+.placebet-header {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.placebet-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 20px;
+  animation: spinSlow 12s linear infinite;
+}
+
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.placebet h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #ffb400, #ffda64);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(255, 180, 0, 0.4);
+}
+
+.placebet p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.placebet-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.placebet-card {
+  background: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(255, 180, 0, 0.2);
+  border-radius: 14px;
+  padding: 25px 30px;
+  width: 150px;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.placebet-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: #ffb400;
+  box-shadow: 0 0 18px rgba(255, 180, 0, 0.4);
+}
+
+.placebet-card img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
+}
+
+.placebet-card span {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .placebet-card {
+    width: 45%;
+  }
+  .placebet h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .placebet-card {
+    width: 100%;
+  }
+  .placebet-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .placebet h2 {
+    font-size: 1.4rem;
+  }
+  .placebet p {
+    font-size: 0.9rem;
+  }
+}

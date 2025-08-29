@@ -1,0 +1,148 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  color: white;
+  gap: 40px;
+  flex-wrap: wrap;
+  
+  /* 🔥 Background with overlay */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); /* dark overlay */
+  z-index: 1;
+}
+
+.about > * {
+  position: relative;
+  z-index: 2; /* keeps content above overlay */
+}
+
+.about-left img,
+.about-extra img {
+  max-width: 280px;
+  height: auto;
+}
+
+.about-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-right h4 {
+  color: #ff9800;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.about-right h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.about-right p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn,
+.demo-btn {
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+  min-width: 150px;
+}
+
+.whatsapp-btn {
+  background: #25d366;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+.demo-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.demo-btn:hover {
+  background: #e68900;
+}
+
+/* 📱 Responsive */
+@media (max-width: 992px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 6%;
+  }
+
+  .about-left,
+  .about-extra {
+    order: -1;
+  }
+
+  .about-left img,
+  .about-extra img {
+    max-width: 220px;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .about-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-right p {
+    font-size: 1rem;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .whatsapp-btn,
+  .demo-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 30px 20px;
+  }
+
+  .about-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-right p {
+    font-size: 0.95rem;
+  }
+}
