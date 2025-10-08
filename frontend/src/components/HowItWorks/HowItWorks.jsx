@@ -48,6 +48,9 @@ function HowItWorks() {
         <button className="wa-btn" onClick={() => openWhatsApp("918533078421")}>
           +91 8533078421
         </button>
+        <button className="wa-btn" onClick={() => openWhatsApp("918755271258")}>
+          +91 8755271258
+        </button>
       </div>
     </section>
   );
